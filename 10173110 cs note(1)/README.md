@@ -33,6 +33,7 @@
   ![image](https://user-images.githubusercontent.com/91866984/143556100-09381f3b-fc97-4407-aaad-91e14e92a5df.png)
   <br>
   **Linux各個目錄存放的內容**<br>
+  <br>
   * /：根目錄，所有檔案皆從根目錄開始，只有root使用者具該目錄的許可權
   * /root：該目錄為系統管理員，也稱作超級許可權者的使用者主目錄
   * /bin：存放經常使用的命令
