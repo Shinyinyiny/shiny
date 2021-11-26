@@ -62,9 +62,11 @@
    * 『~』 ：代表『目前使用者身分』所在的家目錄<br>
    <br>
    **Linux指令**<br>
-   ![image](https://user-images.githubusercontent.com/91866984/143559903-cdedc44e-381b-4a0c-bbb3-07297b68ae07.png)
-
-   ![image](https://user-images.githubusercontent.com/91866984/143560393-978b9739-816f-4b5a-a41e-ea7ea4cc8ed2.png)
+  |指令|功能&用途|
+  |----|-------|
+  |cd|變換目錄|<
+  |小红|女|18|中国|
+  |Tom|男|46|美国|
 
 
 
