@@ -52,8 +52,8 @@
 
 **使用者與群組**<br>
 * 關於身分<br>
- * 身分分類<br>
-  * user(owner)<br>
-  * group<br>
-  * other<br>
+   * 身分分類<br>
+     * user(owner)<br>
+     * group<br>
+     * other<br>
 
