@@ -110,4 +110,3 @@
   (Esc鍵退出編輯模式)<br>
   * 命令列模式<br>
   ![Untitled2](https://user-images.githubusercontent.com/91866984/143729177-4ccfef0b-51e6-4491-80c9-b5cdc972092a.png)<br><br><br>
-            
