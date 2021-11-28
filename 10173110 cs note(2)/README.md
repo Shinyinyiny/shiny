@@ -48,7 +48,7 @@
 |rmdir|刪除一個裡面是空的空目錄|
 |rm|刪除檔案|
 |rm -r|強制刪除|
-|mv|移動 重新命名|<br>
+|mv|移動 重新命名|<br><br><br>
 
 **使用者與群組**<br>
 * 關於身分:<br>
@@ -68,5 +68,46 @@
 **查看檔案目錄資訊**<br>
 * ls -l：顯示目錄下的所有檔案詳細資訊<br>
 * ls -al：顯示目錄下的所有檔案(包含隱藏檔)詳細資訊<br>
+![image](https://user-images.githubusercontent.com/91866984/143727735-1f5288a9-b766-48af-92b1-89d4d46ca34a.png)<br><br><br>
 
+**更改檔案或目錄全限**<br>
+* chown可修改檔案或目錄的擁有者及群組<br>
+![image](https://user-images.githubusercontent.com/91866984/143727813-921989bb-5b4b-4f43-ad77-545b73277567.png)<br><br><br>
 
+**更改使用者權限**<br>
+* chmod可控制檔案如何被他人調用→ chmod [-cfvR] [--help] [--version] mode file…<br>
+* mode許可權設定字串→ [ugoa...][[+-=][rwxX]...][,...]<br>
+![Untitled](https://user-images.githubusercontent.com/91866984/143728563-f2686609-cf20-4bad-89e4-2a260feff205.png)<br><br><br>
+
+**目錄權限**<br>
+* chmod 664 test.txt<br>
+![Untitled1](https://user-images.githubusercontent.com/91866984/143728649-961f698a-9f50-43ab-8dfd-265c927e5b6a.png)<br><br><br>
+![image](https://user-images.githubusercontent.com/91866984/143728572-f693591e-9386-4999-b54d-7217d98c871e.png)<br><br><br>
+
+**更改使用者權限**<br>
+* 檔案file1.txt設為所有人接可讀取:<br>
+  * chmod ugo+r file1.txt<br>
+* 將檔案file1.txt 與 file2.txt file2.txt設為該檔案用有者，與其所屬同一群體者可寫入，但其他以外的人則不可寫入:<br>
+  * chmod ug+w,o-w file1.txt file2.txt<br>
+* 將 ex1.py 設定為只有該檔案擁有者可以執行:
+  * chmod u+x ex1.py<br>
+* 將目前目錄下的所有檔案與子目錄皆設為任何人可讀取:<br>
+  * chmod -R a+r*<br>
+* chmod a=rwx file == chmod 777 file<br>
+* chmod ug=rwx,o=x file == chmod 771 file<br><br><br>
+
+**編輯文檔**<br>
+* nano<br>
+  * Ctrl C: 顯示游標所在<br>
+  * Ctrl W: 查詢命令，按下後會跳轉到末行的反白位置，輸入要查詢的內容再按enter即可。<br>
+![image](https://user-images.githubusercontent.com/91866984/143728976-a2ca334b-baa1-490a-82b4-50b395d52e36.png)<br><be><br>
+* vi/vim(vim相當於vi的升級版)<br>
+  * 一般模式: 一般模式：可使用上下左右進行游標宜動、刪除字元及複製貼上檔案資料。<br>
+  * 編輯模式：編輯文字<br>
+![image](https://user-images.githubusercontent.com/91866984/143729054-d505d0fb-5e94-4102-8c7a-57d47bb41779.png)<br>
+  (i鍵即可進入編輯模式)<br>
+![image](https://user-images.githubusercontent.com/91866984/143729057-026ab28f-7c3d-491c-9c57-eeac3849d0d8.png)<br>
+  (Esc鍵退出編輯模式)<br>
+  * 命令列模式<br>
+  ![Untitled2](https://user-images.githubusercontent.com/91866984/143729177-4ccfef0b-51e6-4491-80c9-b5cdc972092a.png)<br><br><br>
+            
