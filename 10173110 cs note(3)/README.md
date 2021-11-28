@@ -194,6 +194,7 @@
   3. 用狀態碼標準化結果（Http status code）<br>
   4. 用動詞標準化請求方法（Http Request Method）<br><br><br>
 ![image](https://user-images.githubusercontent.com/91866984/143731020-f082ae24-65af-451f-b20e-c6da3ba61440.png)<br><br><br>
+
   * Http Request Method
-![image](https://user-images.githubusercontent.com/91866984/143731041-1fc8218d-880f-4576-a05b-88358c0d936b.png)<br><br><br>
-![Untitled6](https://user-images.githubusercontent.com/91866984/143731091-e2e194a1-4c7a-48a5-9537-1312538ef0cd.png)
+![image](https://user-images.githubusercontent.com/91866984/143731113-082e8677-16c7-4312-909b-c03e370daaed.png)<br><br><br>
+![Untitled6](https://user-images.githubusercontent.com/91866984/143731091-e2e194a1-4c7a-48a5-9537-1312538ef0cd.png)<br><br><br>
