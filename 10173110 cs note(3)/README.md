@@ -68,7 +68,7 @@
   * cat: 從第一行顯示檔案內容、形成新檔案<br>
     * cat -n file1 > file2→把file1的檔案內容加上行號後輸入file2檔案<br>
       * -n  → 由1開始對所有輸出的行數編號<br>
-      * >   → 將多個文件覆蓋到目標文件中<br>
+      * >  → 將多個文件覆蓋到目標文件中<br>
       * >>  → 將多個文件追加到目標文件中，不覆蓋<br><br><br>
       
   * tac: 從最後一行開始顯示<br>
@@ -123,4 +123,77 @@
   |20/21|ftp|一個傳遞客戶端與伺服器之間的命令(21，命令通訊埠);另一個傳遞資料(20，資料通訊埠)|
   |443|https|超級文字傳輸安全協定|
   |25|smtp|簡單郵件傳輸協定，是一個在網際網路上傳輸電子郵件的標準|
-  |53|DNS|網域名稱系統，將域名和IP位址相互對應的一個分散式資料庫，能夠使人更方便的存取網際網路|
+  |53|DNS|網域名稱系統，將域名和IP位址相互對應的一個分散式資料庫，能夠使人更方便的存取網際網路|<br><br><br>
+  
+* TCP/IP<br>  
+  TCP/IP提供了點對點的連結機制，**將資料應該如何封裝、定址、傳輸、路由以及在目的地如何接收，都加以標準化**。<br>
+  它將軟體通信過程抽象化為四個抽象層，採取協議堆疊的方式，分別實作出不同通信協定。<br>
+  協定套組下的各種協議，依其功能不同，被分別歸屬到這四個階層之中，常被視為是簡化的七層OSI模型。<br><br><br>
+  
+  * 當瀏覽器輸入網址，發出一個 GET 請求時，過程中發生了哪些事情？<br>
+  **1. TCP三向交握**<br>
+     在瀏覽器送出請求之後，瀏覽器和伺服器就會開始初步溝通，確定雙方的溝通管道順暢，以便後續請求的執行<br>
+  **2. 瀏覽器請求、資料傳輸、渲染畫面**<br>
+     如同前面所提，當三項交握結束後，瀏覽器和伺服器便會開始執行請求、資料傳輸與渲染畫面的過程<br>
+**3. TCP四次揮手，結束連線**<br>
+     在網頁成功渲染之後，瀏覽器就會和伺服器進行最後的溝通，確認傳輸過程已完成，準備結束連線。<br><br><br>
+  
+**網路相關**<br>
+* route<br>
+* netstat -r<br>
+  (mac)<br>
+* "Destination", "Genmask"：完整的網域<br>
+* "Gateway"：這個網域是從哪個Gateway連接出去的，0.0.0.0表示這個路由是從本機傳送，有IP的話，代表需要經過路由器才能傳出去<br>
+* "Iface"：網路卡介面<br><br><br>
+![image](https://user-images.githubusercontent.com/91866984/143730702-829a99b2-959a-4175-a6ef-f8b06b534ae5.png)<br><br><br>
+
+* route
+  * add : 新增一條路由規則<br>
+  * del : 刪除一條路由規則<br>
+  * -net : 目的地址是一個網路<br>
+  * -host : 目的地址是一個主機<br>
+  * target : 目的網路或主機<br>
+  * netmask : 目的地址的網路掩碼<br>
+  * gw : 路由資料包通過的閘道器<br>
+  * dev : 為路由指定的網路介面<br><br><br>
+![image](https://user-images.githubusercontent.com/91866984/143730772-8f9e9c4e-8b4a-474f-9686-0a8a859f2274.png)<br><br><br>
+
+* ping<br>
+![image](https://user-images.githubusercontent.com/91866984/143730784-c74d7d67-1508-4d71-84fd-917f121c797b.png)<br><br><br>
+
+常用網路檢測工具，可藉由發送 ICMP ECHO_REQUEST 封包，檢查自己與特定設備之間的網路是否暢通，並同時測量網路連線的來回通訊延遲時間（round-trip delay time）。<br>
+  * -n：參數指定封包數→EX：ping -n 10 blog.gtwang.org<br>
+  * -t：持續監看網路是否正常→EX：ping -t blog.gtwang.org<br>
+  * -4/-6：IPv4/IPv6<br>
+  * -c：指定Ping次數→EX：ping -c 4 blog.gtwang.org<br>
+  * -s：指定發送的數據字結數→EX：ping -s 1024 facebook.com<br>
+  * -i：指定收發資訊間隔時間→EX：ping -i 0.4 facebook.com<br><br><br>
+  
+影響網路速度的因素:<br>
+  * 延遲（Latency）：封包從來源端至目的端中間所花的時間<br>
+  * 頻寬（Bandwidth）：傳輸媒介的最大吞吐量<br><br><br>
+  
+網路延遲（Latency）的組成元素:<br>
+  * propagation delay：封包在網路線上傳輸所花費的時間，與網路線上電子訊號跑的速度有關，這個時間就是距離除以訊號傳送速度所得到的數值。<br>
+  * transmission delay：網路卡將資料傳送到網路線上所花的時間，與網路設備的傳送速度有關。<br>
+  * nodal processing delay：路由器處理封包表頭、檢查位元資料錯誤與尋找配送路徑等所花費的時間。<br>
+  * queuing delay：路由器因為某些因素無法立刻將封包傳送到網路上，造成封包暫存在佇列中等待的時間。<br><br><br>
+
+* netstat<br>
+![image](https://user-images.githubusercontent.com/91866984/143730944-dc08dbf6-ae5f-4c1c-843a-6b697b0f1a83.png)<br><br><br>
+![image](https://user-images.githubusercontent.com/91866984/143730957-aed30547-6837-40f7-87bc-020bc495c894.png)<br><br><br>
+  * 查看端口是否被占用：netstat -al grep 3306<br>
+  * 查看數據包統計信息：netstat -s<br>
+  * 查看路由信息：netstat -r<br><br><br>
+
+**資料傳輸**<br>
+* HTTP超文本傳輸協定(HyperText Transfer Protocol)<br>
+  協定內容：<br>
+  1. 標準化內容格式<br>
+  2. 分為 header 跟 body<br>
+  3. 用狀態碼標準化結果（Http status code）<br>
+  4. 用動詞標準化請求方法（Http Request Method）<br><br><br>
+![image](https://user-images.githubusercontent.com/91866984/143731020-f082ae24-65af-451f-b20e-c6da3ba61440.png)<br><br><br>
+  * Http Request Method
+![image](https://user-images.githubusercontent.com/91866984/143731041-1fc8218d-880f-4576-a05b-88358c0d936b.png)<br><br><br>
+![Untitled6](https://user-images.githubusercontent.com/91866984/143731091-e2e194a1-4c7a-48a5-9537-1312538ef0cd.png)
